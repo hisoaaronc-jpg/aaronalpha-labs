@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.title">AaronAlpha Labs — 把 AI 变成企业的真实增长引擎</title>
+<meta name="description" data-i18n-content="meta.desc" content="AaronAlpha Labs：AI 智能体开发者与出海科技顾问。为要求结果的企业，交付可落地的 AI 客服与自动化方案。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0B0F'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='36' font-weight='700' fill='%2322D3EE' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+[data-theme="dark"]{
+  --bg:#0A0B0F; --bg2:#0B0D12;
+  --text:#E8EAF0; --heading:#FFFFFF;
+  --accent:#22D3EE; --accent-dim:rgba(34,211,238,.12);
+  --muted:#9AA0AE; --border:#232733; --border-soft:#3A3F4C;
+  --card:#12141B; --header-bg:rgba(10,11,15,.88);
+  --hero-grid:rgba(255,255,255,.035);
+}
+[data-theme="light"]{
+  --bg:#FAFBFC; --bg2:#F2F4F7;
+  --text:#1A1D24; --heading:#0B0D12;
+  --accent:#0891B2; --accent-dim:rgba(8,145,178,.10);
+  --muted:#5B6472; --border:#E5E8EF; --border-soft:#D5D9E0;
+  --card:#FFFFFF; --header-bg:rgba(250,251,252,.88);
+  --hero-grid:rgba(11,13,18,.045);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI","Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--text);
+  line-height:1.7; font-size:16px;
+  transition:background-color .3s var(--ease),color .3s var(--ease);
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent);color:#0A0B0F}
+a{color:inherit;text-decoration:none}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+/* header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:var(--header-bg);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:saturate(1.2);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1120px;margin:0 auto;padding:0 24px}
+.brand{font-weight:700;font-size:17px;letter-spacing:.02em;color:var(--heading)}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-tools{display:flex;align-items:center;gap:10px}
+.tool-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  height:34px;min-width:34px;padding:0 10px;
+  background:transparent;border:1px solid var(--border-soft);border-radius:8px;
+  color:var(--text);font-size:13px;cursor:pointer;
+  transition:border-color .2s,color .2s,background-color .3s;
+}
+.tool-btn:hover{border-color:var(--accent);color:var(--accent)}
+.tool-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tool-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* hero */
+.hero{
+  padding:168px 0 96px;position:relative;overflow:hidden;
+  background-image:linear-gradient(var(--hero-grid) 1px,transparent 1px),linear-gradient(90deg,var(--hero-grid) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+.hero h1{
+  font-size:clamp(34px,5.4vw,58px);line-height:1.22;font-weight:700;letter-spacing:-.01em;
+  color:var(--heading);max-width:16em;margin-bottom:20px;
+}
+.hero h1 .hl{color:var(--accent)}
+.hero .sub{font-size:clamp(15px,2vw,18px);color:var(--muted);max-width:42em;margin-bottom:36px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 30px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;
+  border:1px solid transparent;transition:transform .2s var(--ease),box-shadow .2s,background-color .2s,color .2s;
+}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.btn-primary{background:var(--accent);color:#0A0B0F}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--border-soft)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.trust{font-size:13px;letter-spacing:.28em;color:var(--muted)}
+/* sections */
+section.block{padding:88px 0}
+.sec-head{margin-bottom:48px}
+.sec-kicker{font-size:13px;font-weight:600;letter-spacing:.22em;color:var(--accent);margin-bottom:12px;text-transform:uppercase}
+.sec-title{font-size:clamp(26px,3.6vw,36px);font-weight:700;color:var(--heading);letter-spacing:-.01em}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px 28px;
+  display:flex;flex-direction:column;gap:14px;
+  transition:border-color .25s,transform .25s var(--ease),background-color .3s;
+}
+.svc-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.svc-card.hero-card{border-color:var(--accent)}
+.svc-tag{align-self:flex-start;font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;background:var(--accent-dim);color:var(--accent);letter-spacing:.06em}
+.svc-card h3{font-size:19px;color:var(--heading);font-weight:700}
+.svc-card p{font-size:14.5px;color:var(--muted);flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12.5px;padding:5px 12px;border:1px solid var(--border-soft);border-radius:99px;color:var(--text);font-feature-settings:'tnum'}
+.chip.hot{border-color:var(--accent);color:var(--accent)}
+/* advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.adv-item{display:flex;gap:18px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:background-color .3s,border-color .25s}
+.adv-item:hover{border-color:var(--accent)}
+.adv-icon{flex:0 0 44px;width:44px;height:44px;border-radius:12px;background:var(--accent-dim);display:flex;align-items:center;justify-content:center}
+.adv-icon svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.adv-item h3{font-size:16.5px;color:var(--heading);margin-bottom:8px;font-weight:700}
+.adv-item p{font-size:14px;color:var(--muted)}
+/* cases */
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:30px 28px;transition:background-color .3s,border-color .25s}
+.case-card:hover{border-color:var(--accent)}
+.case-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.case-tag{font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;letter-spacing:.06em}
+.tag-demo{background:var(--accent-dim);color:var(--accent)}
+.tag-live{background:rgba(52,211,153,.12);color:#34D399}
+[data-theme="light"] .tag-live{background:rgba(5,150,105,.12);color:#059669}
+.tag-pilot{background:rgba(251,191,36,.14);color:#F59E0B}
+[data-theme="light"] .tag-pilot{background:rgba(217,119,6,.14);color:#D97706}
+.tag-lab{background:rgba(148,163,184,.14);color:var(--muted)}
+.case-card h3{font-size:18px;color:var(--heading);margin-bottom:10px;font-weight:700}
+.case-card p{font-size:14px;color:var(--muted)}
+/* about */
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-text p{margin-bottom:18px;font-size:15.5px;color:var(--text);max-width:40em}
+.about-text p:last-child{margin-bottom:0}
+.about-side{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px 28px;transition:background-color .3s}
+.about-side h4{font-size:14px;letter-spacing:.18em;color:var(--accent);margin-bottom:18px;font-weight:600}
+.fact-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--border);font-size:14px}
+.fact-row:first-of-type{border-top:none}
+.fact-row .k{color:var(--muted);flex:0 0 auto}
+.fact-row .v{color:var(--heading);text-align:right;font-weight:600}
+/* contact */
+.contact-box{
+  background:var(--card);border:1px solid var(--border);border-radius:18px;
+  padding:64px 48px;text-align:center;transition:background-color .3s;
+}
+.contact-box h2{font-size:clamp(24px,3.4vw,34px);color:var(--heading);margin-bottom:14px;font-weight:700}
+.contact-box p{color:var(--muted);margin-bottom:32px;max-width:36em;margin-left:auto;margin-right:auto}
+.contact-mail{display:inline-block;font-size:15px;color:var(--accent);margin-top:22px;letter-spacing:.02em}
+/* footer */
+footer{border-top:1px solid var(--border);padding:36px 0;margin-top:24px}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+.foot nav{display:flex;gap:20px}
+.foot nav a:hover{color:var(--accent)}
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.08s}
+.reveal[data-delay="2"]{transition-delay:.16s}
+.reveal[data-delay="3"]{transition-delay:.24s}
+.reveal[data-delay="4"]{transition-delay:.32s}
+/* responsive */
+@media(max-width:960px){
+  .svc-grid{grid-template-columns:1fr}
+  .adv-grid{grid-template-columns:1fr}
+  .case-grid{grid-template-columns:1fr}
+  .about-wrap{grid-template-columns:1fr}
+  .nav-links{display:none}
+  section.block{padding:64px 0}
+  .hero{padding:136px 0 72px}
+  .contact-box{padding:48px 28px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#home">AaronAlpha<span> Labs</span></a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#home" data-i18n="nav.home">主页</a>
+      <a href="#services" data-i18n="nav.services">业务</a>
+      <a href="#advantages" data-i18n="nav.advantages">优势</a>
+      <a href="#cases" data-i18n="nav.cases">案例</a>
+      <a href="#about" data-i18n="nav.about">关于</a>
+      <a href="#contact" data-i18n="nav.contact">联系</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="tool-btn" id="langBtn" aria-label="切换语言 / Switch language">EN</button>
+      <button class="tool-btn" id="themeBtn" aria-label="切换主题 / Toggle theme">
+        <svg id="iconMoon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg id="iconSun" viewBox="0 0 24 24" style="display:none"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1 class="reveal" data-i18n="hero.title">把 <span class="hl">AI</span> 变成企业的真实增长引擎</h1>
+    <p class="sub reveal" data-delay="1" data-i18n="hero.sub">我是 Aaron，AI 智能体开发者与出海科技顾问。为要求结果的企业，交付可落地的 AI 客服与自动化方案。</p>
+    <div class="cta-row reveal" data-delay="2">
+      <a class="btn btn-primary" href="#services" data-i18n="hero.cta1">查看业务</a>
+      <a class="btn btn-ghost" href="#contact" data-i18n="hero.cta2">立即咨询</a>
+    </div>
+    <div class="trust reveal" data-delay="3" data-i18n="hero.trust">AI · 出海 · 价值交付</div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="block" id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker" data-i18n="services.kicker">Services</div>
+      <h2 class="sec-title" data-i18n="services.title">我能为你做什么</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card hero-card reveal">
+        <span class="svc-tag" data-i18n="services.s1.tag">主推</span>
+        <h3 data-i18n="services.s1.title">AI 智能客服落地</h3>
+        <p data-i18n="services.s1.desc">基于 FASTGPT 自研知识库 AI 客服，7 天交付、支持中英多语。面向民宿、酒店、旅行社、特产电商等文旅商家，以及出海华人企业。让打烊后店铺依然接单。</p>
+        <div class="chips">
+          <span class="chip hot" data-i18n="services.s1.c1">7 天交付</span>
+          <span class="chip hot">50% <span data-i18n="services.s1.c2">定金</span></span>
+          <span class="chip">5000–8000 <span data-i18n="services.s1.c3">元/单</span></span>
+          <span class="chip" data-i18n="services.s1.c4">多语支持</span>
+        </div>
+      </div>
+      <div class="svc-card reveal" data-delay="1">
+        <h3 data-i18n="services.s2.title">AI 智能体 / 自动化开发</h3>
+        <p data-i18n="services.s2.desc">把重复劳动交给 AI。达人建联 CRM、AI 工作流、网页应用、数据抓取——按你的业务定制智能体，沉淀为可复用的数字资产。</p>
+        <div class="chips">
+          <span class="chip" data-i18n="services.s2.c1">按需定制</span>
+          <span class="chip" data-i18n="services.s2.c2">可复用资产</span>
+        </div>
+      </div>
+      <div class="svc-card reveal" data-delay="2">
+        <h3 data-i18n="services.s3.title">出海数字化咨询</h3>
+        <p data-i18n="services.s3.desc">帮你把 AI 与内容卖到海外。面向泰国、美国华人市场，用产品与内容成交，不靠酒局人脉。含商业计划书、市场调研、落地路径。</p>
+        <div class="chips">
+          <span class="chip" data-i18n="services.s3.c1">泰国 · 美国</span>
+          <span class="chip" data-i18n="services.s3.c2">战略咨询</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Advantages -->
+<section class="block" id="advantages" style="background:var(--bg2)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker" data-i18n="adv.kicker">Advantages</div>
+      <h2 class="sec-title" data-i18n="adv.title">为什么选择我</h2>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-item reveal">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3.5"/></svg></div>
+        <div><h3 data-i18n="adv.a1.t">懂业务，不只懂技术</h3><p data-i18n="adv.a1.d">有顶层圈层认知与政商操盘经验，理解企业真正要的结果，而不是交付一个演示 Demo。</p></div>
+      </div>
+      <div class="adv-item reveal" data-delay="1">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg></div>
+        <div><h3 data-i18n="adv.a2.t">AI 技术杠杆</h3><p data-i18n="adv.a2.d">用 FASTGPT、智能体、自动化工作流把人力成本打下来，轻资产、高客单、短周期。</p></div>
+      </div>
+      <div class="adv-item reveal">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-5"/><rect x="3.5" y="4" width="17" height="13" rx="2"/><path d="M8 21h8"/></svg></div>
+        <div><h3 data-i18n="adv.a3.t">可验证的交付</h3><p data-i18n="adv.a3.d">演示可实际运行、有录屏、有据可查；演示数据明确标注为演示，不拿虚拟数据当成交。</p></div>
+      </div>
+      <div class="adv-item reveal" data-delay="1">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></div>
+        <div><h3 data-i18n="adv.a4.t">跨文化信任货币</h3><p data-i18n="adv.a4.d">四代泰华 + 潮汕本地身份，在泰国与华人商圈天然被信任，出海沟通零障碍。</p></div>
+      </div>
+      <div class="adv-item reveal">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2 2.6 5 3.2 5 1.4 5 3.3-2.2 3-5 3-5-1.1-5-3"/></svg></div>
+        <div><h3 data-i18n="adv.a5.t">价值成交，不靠关系</h3><p data-i18n="adv.a5.d">商业模式建立在产品与内容之上，用真实价值成交，不依赖酒局与人情债。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cases -->
+<section class="block" id="cases">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker" data-i18n="cases.kicker">Work</div>
+      <h2 class="sec-title" data-i18n="cases.title">近期交付</h2>
+    </div>
+    <div class="case-grid">
+      <div class="case-card reveal">
+        <div class="case-top"><span class="case-tag tag-demo" data-i18n="cases.c1.tag">Demo</span></div>
+        <h3 data-i18n="cases.c1.t">美国数据中心税务 AI 顾问</h3>
+        <p data-i18n="cases.c1.d">面向出海华人数据中心企业：100% 折旧、研发税务抵免、州免税地图；英文演示页含 WhatsApp 风格交互界面，知识库与交付包已就绪。</p>
+      </div>
+      <div class="case-card reveal" data-delay="1">
+        <div class="case-top"><span class="case-tag tag-pilot" data-i18n="cases.c2.tag">试点招募中</span></div>
+        <h3 data-i18n="cases.c2.t">文旅 AI 客服</h3>
+        <p data-i18n="cases.c2.d">面向揭阳民宿、酒店、特产电商的 AI 客服试点：7 天交付、50% 定金模式，开放试点商家合作。</p>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-top"><span class="case-tag tag-live" data-i18n="cases.c3.tag">运行中</span></div>
+        <h3 data-i18n="cases.c3.t">AI 科技简报自动化</h3>
+        <p data-i18n="cases.c3.d">交易日自动产出美股科创与 AI 业界要闻，定时推送。</p>
+      </div>
+      <div class="case-card reveal" data-delay="1">
+        <div class="case-top"><span class="case-tag tag-lab" data-i18n="cases.c4.tag">储备</span></div>
+        <h3 data-i18n="cases.c4.t">达人建联方法论</h3>
+        <p data-i18n="cases.c4.d">海外达人建联话术、批量邀约流程与 CRM 方法沉淀，按真实需求激活。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="block" id="about" style="background:var(--bg2)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker" data-i18n="about.kicker">About</div>
+      <h2 class="sec-title" data-i18n="about.title">关于我</h2>
+    </div>
+    <div class="about-wrap">
+      <div class="about-text reveal">
+        <p data-i18n="about.p1">我是 Aaron，一名以 AI 为杠杆的创业者。出生成长于潮汕，家族四代下南洋，血液里带着跨海做生意的基因。我做过政商一线的操盘工作，也积累了对生意的真实理解。现在，我把全部筹码押在 AI 与内容上——用可验证的交付，服务要求结果的企业老板。中国是我的验证场，南洋是我的放大场。</p>
+        <p data-i18n="about.p2">不包装，不画饼。每一次交付都可以实际运行、可以追问、可以复盘。</p>
+      </div>
+      <div class="about-side reveal" data-delay="1">
+        <h4 data-i18n="about.facts">关键事实</h4>
+        <div class="fact-row"><span class="k" data-i18n="about.f1k">身份</span><span class="v" data-i18n="about.f1v">四代泰华 · 潮汕</span></div>
+        <div class="fact-row"><span class="k" data-i18n="about.f2k">路线</span><span class="v" data-i18n="about.f2v">轻资产 · 高客单 · 短周期</span></div>
+        <div class="fact-row"><span class="k" data-i18n="about.f3k">交付</span><span class="v" data-i18n="about.f3v">7 天 · 50% 定金</span></div>
+        <div class="fact-row"><span class="k" data-i18n="about.f4k">市场</span><span class="v" data-i18n="about.f4v">中国验证 · 南洋放大</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="block" id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <div class="sec-kicker" data-i18n="contact.kicker">Contact</div>
+      <h2 data-i18n="contact.title">有业务需求？我们聊聊。</h2>
+      <p data-i18n="contact.desc">留下你的联系方式，我会在 24 小时内回复。</p>
+      <a class="btn btn-primary" href="mailto:AaronAlpha95@outlook.com" data-i18n="contact.cta">联系我</a>
+      <br><a class="contact-mail" href="mailto:AaronAlpha95@outlook.com">AaronAlpha95@outlook.com</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div><span class="brand" style="font-size:15px">AaronAlpha<span> Labs</span></span> · <span data-i18n="footer.copy">© 2026 版权所有</span></div>
+    <nav>
+      <a href="#services" data-i18n="nav.services">业务</a>
+      <a href="#cases" data-i18n="nav.cases">案例</a>
+      <a href="#about" data-i18n="nav.about">关于</a>
+      <a href="#contact" data-i18n="nav.contact">联系</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+zh:{
+"meta.title":"AaronAlpha Labs — 把 AI 变成企业的真实增长引擎",
+"meta.desc":"AaronAlpha Labs：AI 智能体开发者与出海科技顾问。为要求结果的企业，交付可落地的 AI 客服与自动化方案。",
+"nav.home":"主页","nav.services":"业务","nav.advantages":"优势","nav.cases":"案例","nav.about":"关于","nav.contact":"联系",
+"hero.title":"把 <span class=\"hl\">AI</span> 变成企业的真实增长引擎",
+"hero.sub":"我是 Aaron，AI 智能体开发者与出海科技顾问。为要求结果的企业，交付可落地的 AI 客服与自动化方案。",
+"hero.cta1":"查看业务","hero.cta2":"立即咨询","hero.trust":"AI · 出海 · 价值交付",
+"services.kicker":"Services","services.title":"我能为你做什么",
+"services.s1.tag":"主推","services.s1.title":"AI 智能客服落地",
+"services.s1.desc":"基于 FASTGPT 自研知识库 AI 客服，7 天交付、支持中英多语。面向民宿、酒店、旅行社、特产电商等文旅商家，以及出海华人企业。让打烊后店铺依然接单。",
+"services.s1.c1":"7 天交付","services.s1.c2":"定金","services.s1.c3":"元/单","services.s1.c4":"多语支持",
+"services.s2.title":"AI 智能体 / 自动化开发",
+"services.s2.desc":"把重复劳动交给 AI。达人建联 CRM、AI 工作流、网页应用、数据抓取——按你的业务定制智能体，沉淀为可复用的数字资产。",
+"services.s2.c1":"按需定制","services.s2.c2":"可复用资产",
+"services.s3.title":"出海数字化咨询",
+"services.s3.desc":"帮你把 AI 与内容卖到海外。面向泰国、美国华人市场，用产品与内容成交，不靠酒局人脉。含商业计划书、市场调研、落地路径。",
+"services.s3.c1":"泰国 · 美国","services.s3.c2":"战略咨询",
+"adv.kicker":"Advantages","adv.title":"为什么选择我",
+"adv.a1.t":"懂业务，不只懂技术","adv.a1.d":"有顶层圈层认知与政商操盘经验，理解企业真正要的结果，而不是交付一个演示 Demo。",
+"adv.a2.t":"AI 技术杠杆","adv.a2.d":"用 FASTGPT、智能体、自动化工作流把人力成本打下来，轻资产、高客单、短周期。",
+"adv.a3.t":"可验证的交付","adv.a3.d":"演示可实际运行、有录屏、有据可查；演示数据明确标注为演示，不拿虚拟数据当成交。",
+"adv.a4.t":"跨文化信任货币","adv.a4.d":"四代泰华 + 潮汕本地身份，在泰国与华人商圈天然被信任，出海沟通零障碍。",
+"adv.a5.t":"价值成交，不靠关系","adv.a5.d":"商业模式建立在产品与内容之上，用真实价值成交，不依赖酒局与人情债。",
+"cases.kicker":"Work","cases.title":"近期交付",
+"cases.c1.tag":"Demo","cases.c1.t":"美国数据中心税务 AI 顾问","cases.c1.d":"面向出海华人数据中心企业：100% 折旧、研发税务抵免、州免税地图；英文演示页含 WhatsApp 风格交互界面，知识库与交付包已就绪。",
+"cases.c2.tag":"试点招募中","cases.c2.t":"文旅 AI 客服","cases.c2.d":"面向揭阳民宿、酒店、特产电商的 AI 客服试点：7 天交付、50% 定金模式，开放试点商家合作。",
+"cases.c3.tag":"运行中","cases.c3.t":"AI 科技简报自动化","cases.c3.d":"交易日自动产出美股科创与 AI 业界要闻，定时推送。",
+"cases.c4.tag":"储备","cases.c4.t":"达人建联方法论","cases.c4.d":"海外达人建联话术、批量邀约流程与 CRM 方法沉淀，按真实需求激活。",
+"about.kicker":"About","about.title":"关于我",
+"about.p1":"我是 Aaron，一名以 AI 为杠杆的创业者。出生成长于潮汕，家族四代下南洋，血液里带着跨海做生意的基因。我做过政商一线的操盘工作，也积累了对生意的真实理解。现在，我把全部筹码押在 AI 与内容上——用可验证的交付，服务要求结果的企业老板。中国是我的验证场，南洋是我的放大场。",
+"about.p2":"不包装，不画饼。每一次交付都可以实际运行、可以追问、可以复盘。",
+"about.facts":"关键事实","about.f1k":"身份","about.f1v":"四代泰华 · 潮汕","about.f2k":"路线","about.f2v":"轻资产 · 高客单 · 短周期","about.f3k":"交付","about.f3v":"7 天 · 50% 定金","about.f4k":"市场","about.f4v":"中国验证 · 南洋放大",
+"contact.kicker":"Contact","contact.title":"有业务需求？我们聊聊。","contact.desc":"留下你的联系方式，我会在 24 小时内回复。","contact.cta":"联系我",
+"footer.copy":"© 2026 版权所有"
+},
+en:{
+"meta.title":"AaronAlpha Labs — Turning AI into a real growth engine for your business",
+"meta.desc":"AaronAlpha Labs: AI agent builder & overseas tech advisor. Deployable AI customer service and automation for businesses that want results.",
+"nav.home":"Home","nav.services":"Services","nav.advantages":"Advantages","nav.cases":"Work","nav.about":"About","nav.contact":"Contact",
+"hero.title":"Turning <span class=\"hl\">AI</span> into a real growth engine for your business",
+"hero.sub":"I'm Aaron — AI agent builder & overseas tech advisor. I deliver deployable AI customer service and automation for businesses that want results, not tutorials.",
+"hero.cta1":"Explore Services","hero.cta2":"Get in Touch","hero.trust":"AI · GLOBAL · VALUE DELIVERY",
+"services.kicker":"Services","services.title":"What I Can Do for You",
+"services.s1.tag":"Flagship","services.s1.title":"AI Customer Service, Deployed",
+"services.s1.desc":"Custom knowledge-base AI customer service built on FASTGPT — delivered in 7 days, multilingual. For hospitality, travel agencies, specialty e-commerce, and overseas Chinese businesses. Your store keeps selling after closing time.",
+"services.s1.c1":"7-day delivery","services.s1.c2":"deposit","services.s1.c3":"RMB / project","services.s1.c4":"Multilingual",
+"services.s2.title":"Custom AI Agents & Automation",
+"services.s2.desc":"Let AI handle the repetitive work. Influencer outreach CRM, AI workflows, web apps, data scraping — custom agents built around your business, growing into reusable digital assets.",
+"services.s2.c1":"Built to order","services.s2.c2":"Reusable assets",
+"services.s3.title":"Overseas Digital Consulting",
+"services.s3.desc":"Take your AI and content overseas. Focused on Chinese communities in Thailand and the US — closing on product and content, not banquets. Business plans, market research, and go-to-market paths included.",
+"services.s3.c1":"Thailand · US","services.s3.c2":"Strategy",
+"adv.kicker":"Advantages","adv.title":"Why Work With Me",
+"adv.a1.t":"Business-first, not tech-first","adv.a1.d":"Top-tier network exposure and government-adjacent operating experience — I deliver the outcomes businesses actually want, not just a demo.",
+"adv.a2.t":"AI Leverage","adv.a2.d":"FASTGPT, agents, and automation workflows that cut labor cost — light assets, high ticket, short cycles.",
+"adv.a3.t":"Verifiable Delivery","adv.a3.d":"Working demos, screen recordings, traceable evidence. Demo data is always labeled as demo — no fake numbers dressed up as revenue.",
+"adv.a4.t":"Cross-Cultural Trust","adv.a4.d":"Fourth-generation Thai-Chinese with Chaoshan roots — native trust in Thai and Chinese business circles, zero-friction cross-border communication.",
+"adv.a5.t":"Close on Value, Not Favors","adv.a5.d":"A business model built on product and content. Real value closes deals — no banquets, no favor debts.",
+"cases.kicker":"Work","cases.title":"Recent Work",
+"cases.c1.tag":"Demo","cases.c1.t":"US Data Center Tax AI Advisor","cases.c1.d":"Tax knowledge base for overseas Chinese data-center firms: 100% bonus depreciation, R&D credits, state tax maps. English demo page with WhatsApp-style interface; knowledge base and delivery package ready.",
+"cases.c2.tag":"Piloting","cases.c2.t":"Hospitality AI Customer Service","cases.c2.d":"Pilot AI customer service for Jieyang homestays, hotels, and specialty e-commerce — 7-day delivery, 50% deposit. Pilot partners welcome.",
+"cases.c3.tag":"Live","cases.c3.t":"Automated AI Tech Briefing","cases.c3.d":"Auto-generated US tech & AI industry briefing on trading days, delivered on schedule.",
+"cases.c4.tag":"In Reserve","cases.c4.t":"Influencer Outreach Playbook","cases.c4.d":"Overseas influencer outreach scripts, batch invitation flows, and CRM methodology — activates on real demand.",
+"about.kicker":"About","about.title":"About Me",
+"about.p1":"I'm Aaron, an entrepreneur leveraging AI. Born and raised in Chaoshan, from a fourth-generation overseas-Chinese family — cross-border business runs in my blood. After years in frontline business and government-adjacent operations, I've gone all-in on AI and content: verifiable delivery for owners who want results. China is where I validate; Southeast Asia is where I scale.",
+"about.p2":"No packaging, no vaporware. Every delivery runs for real — question it, review it, verify it.",
+"about.facts":"Key Facts","about.f1k":"Identity","about.f1v":"Thai-Chinese Gen IV · Chaoshan","about.f2k":"Model","about.f2v":"Light assets · High ticket · Short cycles","about.f3k":"Delivery","about.f3v":"7 days · 50% deposit","about.f4k":"Markets","about.f4v":"Validate in China · Scale in SE Asia",
+"contact.kicker":"Contact","contact.title":"Have a business need? Let's talk.","contact.desc":"Leave your contact and I'll reply within 24 hours.","contact.cta":"Contact Me",
+"footer.copy":"© 2026 All rights reserved"
+}};
+function setLang(l){
+  document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    const k = el.getAttribute('data-i18n');
+    if (I18N[l][k] !== undefined) el.innerHTML = I18N[l][k];
+  });
+  document.querySelectorAll('[data-i18n-content]').forEach(function(el){
+    const k = el.getAttribute('data-i18n-content');
+    if (I18N[l][k] !== undefined) el.setAttribute('content', I18N[l][k]);
+  });
+  document.getElementById('langBtn').textContent = l === 'zh' ? 'EN' : '中文';
+  try{ localStorage.setItem('aal-lang', l); }catch(e){}
+}
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  document.getElementById('iconMoon').style.display = t === 'dark' ? '' : 'none';
+  document.getElementById('iconSun').style.display = t === 'dark' ? 'none' : '';
+  try{ localStorage.setItem('aal-theme', t); }catch(e){}
+}
+(function init(){
+  let lang = 'zh';
+  try{ lang = localStorage.getItem('aal-lang') || 'zh'; }catch(e){}
+  setLang(lang);
+  document.getElementById('langBtn').addEventListener('click', function(){
+    setLang(document.documentElement.lang === 'zh-CN' ? 'en' : 'zh');
+  });
+  let theme = 'dark';
+  try{
+    theme = localStorage.getItem('aal-theme') ||
+      (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  }catch(e){}
+  setTheme(theme);
+  document.getElementById('themeBtn').addEventListener('click', function(){
+    setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
